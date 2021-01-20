@@ -40,4 +40,5 @@ See video
 ## Notes
  * key Q - quit
  * **class Recorder** in camera.py can be used for recording videos
+ * Packages - Numpy and Opencv is required for this project
 
