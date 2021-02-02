@@ -12,7 +12,7 @@ See: https://www.youtube.com/watch?v=S3CwzkT6cK4
 
 import keyboard
 import time
-import autoshot
+import control
 
 rotate = 90
 pitch = 90
@@ -27,18 +27,18 @@ while True:  # making a loop
             break
         if keyboard.is_pressed('a'):
             rotate = max(0, rotate - ANGLE_DIFF_ROTATE)
-            autoshot.rotate(rotate)
+            control.rotate(rotate)
         if keyboard.is_pressed('w'):
             pitch = min(180, pitch + ANGLE_DIFF_PITCH)
-            autoshot.pitch(int(pitch))
+            control.pitch(int(pitch))
         if keyboard.is_pressed('d'):
             rotate = min(180, rotate + ANGLE_DIFF_ROTATE)
-            autoshot.rotate(rotate)
+            control.rotate(rotate)
         if keyboard.is_pressed('s'):
             pitch = max(0, pitch - ANGLE_DIFF_PITCH)
-            autoshot.pitch(int(pitch))
+            control.pitch(int(pitch))
         if keyboard.is_pressed('enter'):
-            autoshot.shotandreloade()
+            control.shotandreloade()
             
     except:
         break
