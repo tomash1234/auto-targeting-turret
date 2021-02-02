@@ -31,9 +31,9 @@ class Target:
         else:
             self.confidence += 1
             if self.confidence > 3:
-                self.radius = radius
+                self.radius = int(radius)
                 self.is_found = True
-                self.target = self.candidate
+                self.target = (int(self.candidate[0]), int(self.candidate[1]))
 
     def set_aim_point(self, pos):
         self.aim_point = pos
@@ -129,6 +129,7 @@ def detect_target(frame, target):
                             param1=50,param2=30,minRadius=0,maxRadius=0)
     if circles is None:
         return frame
+    
     
     for i in circles[0,:]:
         target.new_loc((i[0], i[1]), i[2])
